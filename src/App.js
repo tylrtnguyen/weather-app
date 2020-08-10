@@ -55,8 +55,8 @@ const App = () => {
                     </div>
                     <div className="relative">
                         <h2>Humidity: {weather.main.humidity}%</h2>
-                        <h2>Feels like: {Math.round(weather.main.feels_like)}<sup>&deg;C</sup></h2>
-                        <h2>Wind: {Math.round((weather.wind.speed)*3.6)} km/h</h2>
+                        <h2>Feels like: {Math.round(weather.main.feels_like)}<sup>&deg;{unit === "metric" ? "C" : "F"}</sup></h2>
+                        <h2>Wind: {unit ==="metric" ? `${Math.round((weather.wind.speed)*3.6)} km/h` : `${Math.round(weather.wind.speed)} miles/h`} </h2>
                     </div>
                     <div className="info">
                         <img className="city-icon" src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`} alt={weather.weather[0].description} />
