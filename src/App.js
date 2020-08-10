@@ -44,8 +44,9 @@ const App = () => {
                 onChange={(e) => setCity(e.target.value)}
                 onKeyPress={weatherSearch}
             />
-            <input type="button" value={unit === "metric" ? "Convert to Fahrenheit" : "Convert to Celsius"} className="btn-convert" onClick={handleConvert} />
             {weather.main && (
+                <>
+                <input type="button" value={unit === "metric" ? "Convert to Fahrenheit" : "Convert to Celsius"} className="btn-convert" onClick={handleConvert} />
                 <div className="city">
                     <h2 className="city-name"> 
                         <span>{weather.name}</span>
@@ -65,6 +66,7 @@ const App = () => {
                         <p>{weather.weather[0].description}</p>
                     </div>
                 </div>
+                </>
             )}
         </div>
     )
