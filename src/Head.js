@@ -23,9 +23,9 @@ const Head = () => (
         <meta name="og:url" content={defaultOGURL} />
         <meta name="og:title" content={defaultTitle} />
         <meta name="og:description" content={ defaultDescription} />
-        <meta name="og:image" content={defaultOGImage} />
-        <meta name="og:image:width" content="1320" />
-        <meta name="og:image:height" content="930" />
+        <meta name="og:image" content={defaultOGImage}/>
+        <meta name="og:image:width" content="1200" />
+        <meta name="og:image:height" content="630" />
         {/* Twitter Section */}
         <meta name="twitter:site" content={defaultOGURL} />
         <meta name="twitter:card" content="summary_large_image" />
