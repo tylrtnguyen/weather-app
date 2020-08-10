@@ -6,14 +6,14 @@
 ---
 ### Tools and libraries
 1. [Geolocation API](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API)
-2. [OpenWeather API](https://openweathermap.org/api)
+2. [OpenWeatherMap API](https://openweathermap.org/api)
 3. [Images from Unsplash](https://unsplash.com/)
 
 ---
 
 ## Development Setup
 
-1. Get an API key from [OpenWeather API](https://openweathermap.org/api)
+1. Get an API key from [OpenWeatherMap API](https://openweathermap.org/api)
 2. Clone the repo
    ```shell
    git clone <REPO_URL>
