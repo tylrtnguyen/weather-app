@@ -1,5 +1,6 @@
 import React, { useEffect, useState} from 'react';
 import { fetchByCity, fetchByCoords } from './api/fetchWeather';
+import Head from './Head';
 import './App.css';
 
 const App = () => {
@@ -34,6 +35,7 @@ const App = () => {
 
     return (
         <div className="main-container">
+            <Head />
             <input
                 type="text"
                 className="search"

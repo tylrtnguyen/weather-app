@@ -1,7 +1,9 @@
 <h2 align="center">
     Progressive Weather App
-    <img src="./assets/weather-app.png" alt="Demo Image">
 </h2>
+<p align="center">
+    <img src="public/og.png" alt="Demo Image">
+</p>
 <h4 align="center"><a href="https://www.web-app-gray.now.sh" target="_blank" rel="noopener noreferrer">LIVE DEMO</a></h4>
 
 ---
