@@ -15,9 +15,9 @@ const Head = () => (
         <meta name="keywords" content={defaultKeywords} />
         <meta name="theme-color" content="#D4E0E6" />
         {/* Icon Section */}
-        <link rel="icon" href="/icons/favicon.ico" />
-        <link rel="apple-touch-icon" sizes="1024x1024" href="/images/logo.png" />
-        <link rel="icon" type="image/png" href="/images/favicon.png" />
+        <link rel="icon" href="images/favicon.png" />
+        <link rel="apple-touch-icon" sizes="1024x1024" href="images/logo.png" />
+        <link rel="icon" type="image/png" href="images/favicon.png" />
         <link rel="manifest" href="/manifest.json" />
         {/* OG Section */}
         <meta name="og:url" content={defaultOGURL} />
