@@ -11,7 +11,7 @@
 
 ---
 
-### Build and use
+## Development Setup
 
 1. Get an API key from [OpenWeather API](https://openweathermap.org/api)
 2. Clone the repo
