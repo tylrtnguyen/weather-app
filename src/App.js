@@ -1,18 +1,36 @@
-import React, {useState} from 'react';
-import fetchWeather from './api/fetchWeather';
+import React, { useEffect, useState} from 'react';
+import { fetchByCity, fetchByCoords } from './api/fetchWeather';
 import './App.css';
 
 const App = () => {
     const [city, setCity] = useState('');
-    const [weather, setWeather] = useState({})
+    const [weather, setWeather] = useState({});
+    const [unit, setUnit] = useState("metric");
 
     const weatherSearch = async (e) => {
         if(e.key === 'Enter') {
-            const data = await fetchWeather(city);
+            const data = await fetchByCity(city, unit);
             setWeather(data);
             setCity('');
         }
     }
+
+    const handleConvert = () => {
+        if(unit === "metric") {
+            setUnit("imperial");
+        } else {
+            setUnit("metric");
+        }
+    }
+
+    useEffect(() => {
+        navigator.geolocation.getCurrentPosition(async (position) => {
+            const lon = position.coords.longitude;
+            const lat = position.coords.latitude;
+            const data = await fetchByCoords(lon, lat, unit);
+            setWeather(data);
+        })
+    }, [unit])
 
     return (
         <div className="main-container">
@@ -24,6 +42,7 @@ const App = () => {
                 onChange={(e) => setCity(e.target.value)}
                 onKeyPress={weatherSearch}
             />
+            <input type="button" value={unit === "metric" ? "Convert to Fahrenheit" : "Convert to Celsius"} className="btn-convert" onClick={handleConvert} />
             {weather.main && (
                 <div className="city">
                     <h2 className="city-name"> 
@@ -32,7 +51,7 @@ const App = () => {
                     </h2>
                     <div className="city-temp">
                         {Math.round(weather.main.temp)}
-                        <sup>&deg;C</sup>
+                        <sup>&deg;{unit === "metric" ? "C" : "F"}</sup>
                     </div>
                     <div className="relative">
                         <h2>Humidity: {weather.main.humidity}%</h2>
